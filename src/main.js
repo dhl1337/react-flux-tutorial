@@ -1,5 +1,6 @@
 $ = jQuery = require('jquery'); // define jquery globally.
 
-var App = console.log('hello world');
+var React = require('react');
+var HomePage = require('./components/HomePage');
 
-module.exports = App;
+React.render(<HomePage/>, document.getElementById('app'));
