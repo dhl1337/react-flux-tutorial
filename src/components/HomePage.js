@@ -12,7 +12,7 @@ var Home = React.createClass({
                 <p>React, React Router, and Flux</p>
                 <Link to="about" className="btn btn-primary btn-lg">Learn more</Link>
             </div>
-        )
+        );
     }
 });
 

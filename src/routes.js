@@ -20,6 +20,6 @@ var routes = (
         <Redirect from='awthurs' to='authors' />
         <Redirect from='about/*' to='about' />
     </Route>
-)
+);
 
 module.exports = routes;
