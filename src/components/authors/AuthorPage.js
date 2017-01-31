@@ -3,21 +3,14 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = require('react-router').Link;
-var AuthorApi = require('../../api/authorApi');
+var AuthorActions = require('../../actions/authorActions');
+var AuthorStore = require('../../stores/authorStore');
 var AuthorList = require('./AuthorList');
 
 var AuthorPage = React.createClass({
     getInitialState: function () {
         return {
-            authors: []
-        }
-    },
-
-    componentDidMount: function () {
-        if (this.isMounted()) {
-            this.setState({
-                authors: AuthorApi.getAllAuthors()
-            })
+            authors: AuthorStore.getAllAuthors()
         }
     },
 
@@ -27,7 +20,7 @@ var AuthorPage = React.createClass({
             <div>
                 <h1>Authors</h1>
                 <Link to="addAuthor" className="btn btn-default">Add Author</Link>
-                <AuthorList authors={this.state.authors} />
+                <AuthorList authors={this.state.authors}/>
             </div>
         );
     }
